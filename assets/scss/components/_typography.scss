@@ -1,0 +1,81 @@
+body {
+    font-family: $font-family;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.5;
+    color: $font-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.emphasis {
+    font-weight: 700;
+    border-bottom: 4px solid $primary-color;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+a {
+    color: $primary-color;
+}
+
+a.emphasis {
+    color: $font-color;
+    text-decoration: none;
+}
+
+.lead {
+    font-size: 1.2em;
+}
+
+.icon {
+    display: inline-block; 
+    width: 1em;
+    height: 1em;
+    margin: 0 3px;
+    position: relative;
+
+    &.icon--heart:before {
+        content: " ";
+        position: absolute;
+        top: 2px;
+        left: 0;
+        background: url("../img/heart-icon.png") no-repeat;
+        background-size: 100%;
+        width: 1em;
+        height: 1em;
+    }
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+}  
+
+@mixin noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}

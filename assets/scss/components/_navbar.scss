@@ -1,0 +1,168 @@
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 36px;
+    color: $white;
+    font-size: .9em;
+
+    .navbar__logo {
+        vertical-align: bottom;
+        z-index: 10;
+
+        @include media("<=small") {
+            position: absolute;
+            top: 1em;
+            left: 1em;
+
+            &.open {
+                filter: invert(100%);
+            }
+        }
+
+        img {
+            width: 140px;
+        }  
+    }
+
+    .navbar__menu {
+        @include media(">small") {
+            display: none;
+        }
+
+        position: absolute;
+        padding: 0.8em;
+        top: 1em;
+        right: .5em;
+        cursor: pointer;
+        z-index: 100;
+
+        .navbar__menu-icon {
+            content: '';
+            display: block;
+            background: $white;
+            height: 3px;
+            width: 2em;
+            border-radius: 3px;
+            -webkit-transition: all ease-in-out 350ms;
+            transition: all ease-in-out 350ms;
+           
+
+            &:before {
+                content: '';
+                display: block;
+                background: $white;
+                height: 3px;
+                width: 2em;
+                border-radius: 3px;
+                -webkit-transition: all ease-in-out 350ms;
+                transition: all ease-in-out 350ms;
+                -webkit-transform: translateY(-9px);
+                transform: translateY(-9px);
+            }
+
+            &:after {
+                content: '';
+                display: block;
+                background: $white;
+                height: 3px;
+                width: 2em;
+                border-radius: 3px;
+                -webkit-transition: all ease-in-out 350ms;
+                transition: all ease-in-out 350ms;
+                -webkit-transform: translateY(6px);
+                transform: translateY(6px);
+            }
+        }
+
+        &.open {
+            .navbar__menu-icon {
+                background: $black;
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+
+                &:before {
+                    background: $black;
+                    display: none;
+                }
+    
+                &:after {
+                    background: $black;
+                    -webkit-transform: translateY(-1px) rotate(-90deg);
+                    transform: translateY(-1px) rotate(-90deg);
+                }
+            }
+        }
+    }
+
+    .navbar__items {
+        @include media(">small") {
+            list-style: none;
+            margin: 0;
+            float: right;
+    
+            li {
+                display: inline;
+                padding: 0 0 8px 40px;
+
+                @include media("<medium") {
+                    padding: 0 0 8px 16px;
+                }
+    
+                a {
+                    color: $white;
+                    text-decoration: none;
+                    transition: .5s ease-in-out;
+    
+                    &:hover {
+                        color: $gray-medium;
+                    }
+                }
+    
+                .btn--nav {
+                    border-color: $white;
+                    padding: 6px 12px;
+    
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+
+        @include media("<=small") {
+            display: none;
+
+            &.open {
+                display: block;
+                list-style: none;
+                padding: 80px 32px;
+                margin: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: #F3ECE3;
+                width: 100%;
+    
+                li {
+                    width: 100%;
+                    padding: 16px 0;
+                    text-align: center;
+                    font-size: 2em;
+    
+                    a { 
+                        color: $black;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                    }
+    
+                    .btn--nav {
+                        border: none;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}

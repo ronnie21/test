@@ -1,0 +1,191 @@
+.music-flow {
+    width: 100%;
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+
+    img, svg {
+        width: 100%;
+
+        .music-note {
+            display: none;
+        }
+    }
+}
+
+.youtube-icon {
+    max-height: 300px;
+    float: right;
+    width: auto;
+
+    @include media("<medium") {
+        float: none;
+        max-height: none;
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.info-group {
+    margin-bottom: 64px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .info-group__title {
+        font-size: 1.3em;
+        margin-bottom: 14px;
+    }
+
+    .info-group__body {
+        width: 90%;
+        margin: 0 auto;
+
+        @include media("<medium") {
+            width: 100%;
+        }
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.mission {
+    position: relative;
+
+    .mission__heading {
+        margin-bottom: 56px;
+    }
+
+    .mission__body {
+        width: 85%;
+        margin: 0 auto;
+    
+        @include media("<medium") {
+            width: 100%;
+        }
+    }
+}
+
+.mountain {
+    position: absolute;
+    left: 0;
+    top: -50px;
+    width: 200px;
+
+    @include media("<medium") {
+        position: relative;
+        text-align: center;
+        left: initial;
+        top: initial;
+        margin: 0 auto 56px;
+    }
+}
+
+.footer {
+    color: $white;
+    position: relative;
+
+    .footer__heading {
+        margin-bottom: 100px;
+    }
+
+    .footer__cta {
+        margin-bottom: 150px;
+        text-align: center;
+    }
+
+    .footer__copy {
+        @include media("<small") {
+            font-size: .9em;
+            padding-bottom: 12px;
+        }
+     }
+
+    .youtube-logo {
+        position: absolute;
+        bottom: 12px;
+        right: 0;
+        width: 120px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        @include media("<small") {
+            display: block;
+            text-align: right;
+            width: 100%;
+            position: relative;
+            
+            img {
+                width: 40%;
+                max-width: 125px;
+            }
+        }
+    }
+}
+
+.questions {
+    .questions__heading {
+        margin-bottom: 0;
+    }
+    .questions__contact {
+        font-weight: 700;
+        font-size: 1.1em;
+    }
+}
+
+.faqs {
+    background: rgb(220, 213, 192);
+    padding: 16px 32px;
+    border-radius: $base-border-radius;
+    margin-bottom: 56px;
+    
+    .qa {
+        border-bottom: 3px solid $white;
+
+        .question {
+            font-weight: 700;
+            cursor: pointer;
+            transition: $base-transition;
+
+            @include noselect;
+
+            &:before {
+                content: url(../img/arrow-icon.svg);
+                margin-right: 16px;
+                display: inline-block;   
+            }
+
+            &.active {
+                &:before {
+                    -webkit-transform: rotate(90deg);
+                    -moz-transform: rotate(90deg);
+                    -o-transform: rotate(90deg);
+                    -ms-transform: rotate(90deg);
+                    transform: rotate(90deg);
+                }
+            }
+
+            &:hover {
+                color: $black;
+            }
+        }
+
+        .answer {
+            margin-left: 42px;
+            margin-right: 42px;
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

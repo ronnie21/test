@@ -1,0 +1,23 @@
+.header {
+    padding: 250px 16px;
+    min-height: 800px;
+    text-align: center;
+    height: 100vh;
+
+    @include media("<small") {
+        min-height: 650px;
+    }
+
+    &.header--index {
+        padding-top: 40vh;
+        background: $black;
+        background-image: url(../img/index-header.jpg);
+        background-size: cover;
+        color: $white;
+        position: relative;
+
+        @include media("<small") {
+            padding-top: 40vh;
+        }
+    }
+}

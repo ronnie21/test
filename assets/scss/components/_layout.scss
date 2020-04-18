@@ -1,0 +1,48 @@
+body {
+    background: $gold-xlight;
+}
+
+.grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media("<medium") {
+        display: block;
+    }
+  
+    .grid__col {
+      flex: 1;
+    }
+
+    .grid__col--half {
+        width: calc(50% - 8px);
+
+        @include media("<medium") {
+            padding: 8px 0;
+            width: 100%;
+        }
+    }
+  }
+
+.wrapper {
+    padding: 120px 0;
+    background: $white;
+
+    @include media("<medium") {
+        padding: 100px 8px;
+    }
+
+    &.wrapper--gray {
+        background: $gray-light;
+    }
+
+    &.wrapper--gold {
+        background: $gold-light;
+    }
+
+    &.wrapper--footer {
+        padding-bottom: 0;
+        background: url(../img/index-footer.png);
+    }
+}

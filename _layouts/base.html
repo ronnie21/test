@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% if page.title %}{{ page.title }} | {% endif %}Uncovr</title>
+        
+        <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" type="text/css">
+        
+        <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+        <script>
+            window.sr = ScrollReveal({
+                scale: 1,
+                distance: '0px',
+            });
+        </script>
+</head>
+<body style="display: none;">
+    {% include nav.html %}
+    <main>
+        {{ content }}
+    </main>
+    {% include footer.html %}
+
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    
+    <script src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+    <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
+
+</body>
+</html>
